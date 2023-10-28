@@ -42,7 +42,8 @@ If you're using the dockerized MongoDB from this repo, you can use `mongodb://ad
 I'll attach my values to copy and paste on Telegram along with the submission. If you've not received it, DM @kryptopauldev
 
 3. Run `yarn install`
-4. Run `yarn dev`
+4. Run `yarn build`
+5. Run `yarn start`
 
 ## Set up the Discord Bot
 Use the following link to add the bot to your server. It will work only if you use my values - otherwise you'll need to generate one yourself. 
