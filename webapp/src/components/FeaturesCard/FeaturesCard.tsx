@@ -14,37 +14,35 @@ import {
   IconManualGearbox,
   IconUsers,
 } from "@tabler/icons-react";
-import { ConnectKitButton } from "connectkit";
 import classes from "./FeaturesCard.module.css";
 
 interface FeaturesCardProps {
   title: string;
   image: string;
   description: string;
-  visible?: boolean;
+  extraComponent?: React.ReactNode;
 }
 
-export function FeaturesCard({ title, image, description }: FeaturesCardProps) {
+export function FeaturesCard({ title, image, description, extraComponent }: FeaturesCardProps) {
   return (
     <>
       <Card withBorder radius="md" className={classes.card}>
         <Card.Section className={classes.imageSection}>
-          <Image src={image} alt="Tesla Model S" />
+          <Image src={image} alt="image" radius={'md'} />
         </Card.Section>
 
         <Group justify="space-between" mt="md" mb="md">
           <div>
             <Text fw={500}>{title}</Text>
             <Text fz="xs" c="dimmed">
-              {description}
+                {description}   
             </Text>
           </div>
         </Group>
 
         <Card.Section className={classes.section}>
           <Group gap={30}>
-          <ConnectKitButton />
-
+{extraComponent}
           </Group>
         </Card.Section>
 

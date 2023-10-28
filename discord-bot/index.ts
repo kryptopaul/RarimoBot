@@ -9,12 +9,12 @@ dotenv.config();
 const token = process.env.TOKEN;
 
 const client = new Client({
-  intents: ["Guilds"], // Needed to print the server name in the message
+  intents: ["Guilds", "GuildMembers"], // Needed to print the server name in the message
 });
 
 client.once("ready", async () => {
   logger.info("Discord bot is ready! 🤖");
-  // await deployCommands({ guildId: "1167476694190407822" }); // Temporarily hardcoding my sevrer
+  await deployCommands({ guildId: "1167476694190407822" }); // Temporarily hardcoding my sevrer
 });
 
 client.on("guildCreate", async (guild) => {

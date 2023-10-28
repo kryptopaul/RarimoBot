@@ -6,7 +6,8 @@ import {
   ButtonBuilder,
   ActionRowBuilder,
 } from "discord.js";
-
+import dotenv from "dotenv";
+dotenv.config();
 export const data = new SlashCommandBuilder()
   .setName("support")
   .setDescription("Join the RarimoBot Support Server!");
@@ -22,8 +23,8 @@ export async function execute(interaction: CommandInteraction) {
 
   const subscribe = new ButtonBuilder()
     .setStyle(ButtonStyle.Link)
-    .setLabel("Subscribe")
-    .setURL("https://example.com")
+    .setLabel("Join Server")
+    .setURL(process.env.SUPPORT_SERVER as string)
     .setEmoji("🛟");
 
   const row = new ActionRowBuilder<ButtonBuilder>().addComponents(subscribe);
